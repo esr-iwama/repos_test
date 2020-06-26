@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+#login {
+    -webkit-box-shadow: rgba(0,0,0,0.04) 0 3px 1px;
+    box-shadow: rgba(0,0,0,0.04) 0 3px 1px;
+    border-color: #dddddd;
+    background-color: #ffffff;
+    border: 1px solid #f0f0f0;
+    border-radius: 2px;
+    margin: 0 auto;
+    padding:0 2px;
+    width:400px;
+}
+#login_logo {
+    margin:5px auto 3px auto;
+}
+#login_logo img {
+    width:300px;
+    height:200px;
+}
+.login_label {
+    margin:4px 0 0 20px;
+    padding:0;
+}
+.login_form {
+    margin:0 0 0 20px;
+    padding:0;
+}
+.login_form input {
+    width:350px;
+}
+#login_button {
+    margin: 10px auto;
+    padding: 10px 0 0 0;
+    text-align:center;
+    line-height: 20px;
+    height:40px;
+    width:350px;
+}
+#forget {
+    text-align:center;
+}
+#help {
+    text-align:center;
+}
+#introduction {
+    text-align:center;
+}

@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="ja">
     <head>
+        <!-- TODO: head共通部外出し -->
         <meta http-equiv="Content-Type" content="text/html;" charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="pragma" content="no-cache">
@@ -11,46 +12,31 @@
         <meta name="robots" content="noindex,nofollow">
         <meta http-equiv="Content-Style-Type" content="text/css">
         <meta http-equiv="Content-Script-Type" content="text/javascript">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"/></script>
-<!-- menu.js
-        <script type="text/javascript">
-            $(document).ready(function(){
-                alert("a");
-            });
-        </script>
--->
-        <style type="text/css">
-/*<!-- main.css -->*/
-body {
-    margin:1px 2px;
-    background-color:#EFEFEF;
+        <!-- TODO: head共通部外出し -->
+        <link rel="stylesheet" href="./css/bootstrap/bootstrap.min.css">
+        <script type="text/javascript" src="./js/jquery-3.5.1.min.js"></script>
+        <script type="text/javascript" src="./js/bootstrap/bootstrap.min.js"></script>
+        <script type="text/javascript" src="./js/balloon.js"></script>
+        <script type="text/javascript" src="./js/common.js"></script>
+        <link rel="stylesheet" type="text/css" href="./css/common.css" rel="stylesheet">
+        <style>
+/* デモサイトmenu専用 */
+#menu {
+    -webkit-box-shadow: rgba(0,0,0,0.04) 0 3px 1px;
+    box-shadow: rgba(0,0,0,0.04) 0 3px 1px;
+    border-color: #dddddd;
+    background-color: #ffffff;
+    border: 1px solid #f0f0f0;
+    border-radius: 2px;
+    margin: 5px 10px;
+    padding:0 2px;
 }
-#main {
-    background-color:#F0F0F0;
-    margin:1px;
+#menu_link_area {
+    margin:2px 5px;
 }
-/*<!-- menu.css -->*/
-
-/*<!-- common.css -->*/
-#header {
-    background-color:#51c1f5;
-    color:#FFFFFF;
-    height: 60px;
-    padding:6px;
-}
-#ap-logo-area {
-    padding-right:1px;
-    display:inline;
-}
-#ap-logo {
-    width:45px;
-    height:45px;
-}
-#org-name-area {
-    display:inline;
+.menu_link_category {
+    margin:5px 0px 0px -3px;
+    padding:0px;
 }
         </style>
     </head>
@@ -58,10 +44,44 @@ body {
         <div id="main" class="container-fluid">
             <div id="header">
                 <p id="ap-logo-area"><img id="ap-logo" src="img/logo.png"/></p>
-                <p id="org-name-area">イーエスアール株式会社</p>
+                <p id="org-name-area">&nbsp;</p>
             </div>
-            <div id="main-menu">&nbsp;</div>
-            <div style="color:whitesmoke">サンプルページです</div>
+            <div id="contents">
+                <div id="message">
+                    <div id="info">アプリのデモサイトです</div>
+                    <div id="error">エラーメッセージサンプル</div>
+                </div>
+                <div id="menu">
+                    <div id="menu_info">ワークフローアプリのデモサイトです。<br/>以下のリンクから各ページのイメージをご確認頂けます。</div>
+                    <hr />
+                    <div id="menu_link_area" class="row">
+                        <div class="menu_link_category col-sm-12">■フロント機能</div>
+                        <a href="./login.html" class="col-sm-12 link_button">ログイン画面(別途認証の場合は利用なし)</a>
+                        <a href="#" class="col-sm-12 link_button">パスワード再設定</a>
+                        <a href="#" class="col-sm-6 link_button">メニュー(通知なし)</a>
+                        <a href="#" class="col-sm-6 link_button">メニュー(通知あり)</a>
+                        <a href="#" class="col-sm-12 link_button">通知一覧</a>
+                        <a href="#" class="col-sm-6 link_button">申請画面</a>
+                        <a href="#" class="col-sm-6 link_button">承認画面</a>
+                        <a href="#" class="col-sm-12 link_button">帳票印刷画面</a>
+                        <div class="menu_link_category col-sm-12">■ユーザ設定(申請系)</div>
+                        <a href="#" class="col-sm-6 link_button">承認者設定</a>
+                        <a href="#" class="col-sm-6 link_button">デフォルト値設定</a>
+                        <div class="menu_link_category col-sm-12">■ユーザ設定(承認系)</div>
+                        <a href="#" class="col-sm-6 link_button">何かあれば追加</a>
+                        <a href="#" class="col-sm-6 link_button">デフォルト値設定</a>
+                        <div class="menu_link_category col-sm-12">■管理機能</div>
+                        <a href="#" class="col-sm-6 link_button">ユーザ管理</a>
+                        <a href="#" class="col-sm-6 link_button">何かあれば追加</a>
+                        <div class="menu_link_category col-sm-12">■メールサンプル</div>
+                        <a href="#" class="col-sm-12 link_button">承認依頼メール</a>
+                        <a href="#" class="col-sm-12 link_button">何かあれば追加</a>
+                        <a href="#" class="col-sm-12 link_button">何かあれば追加</a>
+                    </div>
+                    <hr />
+                    <div id="menu_info">※ 本デモアプリの画面は開発中につき、実際のアプリケーションと多少内容が異なる場合があります。</div>
+                </div>
+            </div>
         </div>
     </body>
 </html>
