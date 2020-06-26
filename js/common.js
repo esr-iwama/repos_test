@@ -71,7 +71,9 @@ function bindSubmitButtons() {
             var form = $(this).parent('form');
             var url = $(this).attr('action');
             $(form).attr('action',url);
-            $(form).submit();
+            // TODO: mockup用 GitHub Pages対応
+            // $(form).submit();
+            location.href=$(form).attr('action');
         });
     });
 }
