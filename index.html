@@ -20,8 +20,8 @@
         <script type="text/javascript" src="./js/common.js"></script>
         <link rel="stylesheet" type="text/css" href="./css/common.css" rel="stylesheet">
         <style>
-/* デモサイトmenu専用 */
-#menu {
+/* デモサイトindex.html専用 */
+#index {
     -webkit-box-shadow: rgba(0,0,0,0.04) 0 3px 1px;
     box-shadow: rgba(0,0,0,0.04) 0 3px 1px;
     border-color: #dddddd;
@@ -31,10 +31,10 @@
     margin: 5px 10px;
     padding:0 2px;
 }
-#menu_link_area {
+#index_link_area {
     margin:2px 5px;
 }
-.menu_link_category {
+.index_link_category {
     margin:5px 0px 0px -3px;
     padding:0px;
 }
@@ -43,19 +43,15 @@
     <body>
         <div id="main" class="container-fluid">
             <div id="header">
-                <p id="ap-logo-area"><img id="ap-logo" src="img/logo.png"/></p>
-                <p id="org-name-area">&nbsp;</p>
+                <div id="ap-logo-area"><img id="ap-logo" src="img/logo.png"/></div>
+                <div id="org-name-area">&nbsp;</div>
             </div>
             <div id="contents">
-                <div id="message">
-                    <div id="info">アプリのデモサイトです</div>
-                    <div id="error">エラーメッセージサンプル</div>
-                </div>
-                <div id="menu">
-                    <div id="menu_info">ワークフローアプリのデモサイトです。<br/>以下のリンクから各ページのイメージをご確認頂けます。</div>
+                <div id="index">
+                    <div id="index_info">ワークフローアプリのデモサイトです。<br/>以下のリンクから各ページのイメージをご確認頂けます。</div>
                     <hr />
-                    <div id="menu_link_area" class="row">
-                        <div class="menu_link_category col-sm-12">■フロント機能</div>
+                    <div id="index_link_area" class="row">
+                        <div class="index_link_category col-sm-12">■フロント機能</div>
                         <a href="./login.html" class="col-sm-12 link_button">ログイン画面(別途認証の場合は利用なし)</a>
                         <a href="#" class="col-sm-12 link_button">パスワード再設定</a>
                         <a href="#" class="col-sm-6 link_button">メニュー(通知なし)</a>
@@ -64,22 +60,22 @@
                         <a href="#" class="col-sm-6 link_button">申請画面</a>
                         <a href="#" class="col-sm-6 link_button">承認画面</a>
                         <a href="#" class="col-sm-12 link_button">帳票印刷画面</a>
-                        <div class="menu_link_category col-sm-12">■ユーザ設定(申請系)</div>
+                        <div class="index_link_category col-sm-12">■ユーザ設定(申請系)</div>
                         <a href="#" class="col-sm-6 link_button">承認者設定</a>
                         <a href="#" class="col-sm-6 link_button">デフォルト値設定</a>
-                        <div class="menu_link_category col-sm-12">■ユーザ設定(承認系)</div>
+                        <div class="index_link_category col-sm-12">■ユーザ設定(承認系)</div>
                         <a href="#" class="col-sm-6 link_button">何かあれば追加</a>
                         <a href="#" class="col-sm-6 link_button">デフォルト値設定</a>
-                        <div class="menu_link_category col-sm-12">■管理機能</div>
+                        <div class="index_link_category col-sm-12">■管理機能</div>
                         <a href="#" class="col-sm-6 link_button">ユーザ管理</a>
                         <a href="#" class="col-sm-6 link_button">何かあれば追加</a>
-                        <div class="menu_link_category col-sm-12">■メールサンプル</div>
+                        <div class="index_link_category col-sm-12">■メールサンプル</div>
                         <a href="#" class="col-sm-12 link_button">承認依頼メール</a>
                         <a href="#" class="col-sm-12 link_button">何かあれば追加</a>
                         <a href="#" class="col-sm-12 link_button">何かあれば追加</a>
                     </div>
                     <hr />
-                    <div id="menu_info">※ 本デモアプリの画面は開発中につき、実際のアプリケーションと多少内容が異なる場合があります。</div>
+                    <div id="index_info">※ 本デモアプリの画面は開発中につき、実際のアプリケーションと多少内容が異なる場合があります。</div>
                 </div>
             </div>
         </div>

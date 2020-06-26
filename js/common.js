@@ -17,6 +17,7 @@ $(document).ready(function() {
     bindCommonLink();
     bindSubmitButtons();
     bindLabelBalloon();
+    bindToggleMenu();
 });
 
 $(window).resize(function() {
@@ -53,11 +54,29 @@ function bindCommonLink() {
     $('#' + ID_SETTING_ICON).on('click', function(){
         window.alert('未実装');
     });
+    // TODO: アコーディオンメニュー
 }
 
 // 共通 リンクによる画面遷移
 function mvPage(url) {
     location.href=url;
+}
+
+// 共通 メニュー開閉
+function bindToggleMenu(){
+    $('#navigation-toggle').on('click', function(){
+        $('#navigation').animate({opacity: "toggle"},100);
+    });
+    $('#' + ID_CONTENTS).on('click', function(){
+        $('#navigation').css('display', 'none');
+    });
+    $('.navigation-category').each(function(){
+        $(this).on('click', function(){
+            $(this).parent().find('.navigation-link').each(function(){
+                $(this).animate({height:'toggle'});
+            });
+        });
+    });
 }
 
 // 共通 疑似SubmitボタンへのSubmit処理
