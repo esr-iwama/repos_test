@@ -5,12 +5,16 @@ var BUTTON_EXECUTING_TEXT = '処理中...';
 // SELECTORs
 var ID_CONTENTS = 'contents';
 var ID_AP_LOGO = 'ap-logo';
-var ID_NOTICE_ICON = 'notice-icon-img';
-var ID_SETTING_ICON = 'setting-icon-img';
+var ID_NOTICE_ICON = 'notice-icon';
+var ID_SETTING_ICON = 'setting-icon';
+var ID_NAVIGATION_TOGGLE='navigation-toggle';
+var ID_NAVIGATION='navigation';
 var CLASS_LABEL = 'label';
 var CLASS_SUBMIT_BUTTON = 'submit_button';
 var CLASS_SUBMIT_BUTTON_CLICKED = 'submit_button_clicked';
 var CLASS_BALLOON_TIP = 'balloonTip';
+var CLASS_NAVIGATION_CATEGORY='navigation-category';
+var CLASS_NAVIGATION_LINK='navigation-link';
 
 $(document).ready(function() {
     adjustContentsScrollbar();
@@ -46,15 +50,17 @@ function bindLabelBalloon() {
 // 共通 リンク設定
 function bindCommonLink() {
     $('#' + ID_AP_LOGO).on('click', function(){
-        mvPage('index.html');        
+        mvPage('index.html');
+    });
+    $('.' + CLASS_NAVIGATION_LINK).on('click', function(){
+        mvPage($(this).attr('href'));
     });
     $('#' + ID_NOTICE_ICON).on('click', function(){
-        window.alert('未実装');
+        mvPage($(this).attr('href'));
     });
     $('#' + ID_SETTING_ICON).on('click', function(){
-        window.alert('未実装');
+        mvPage($(this).attr('href'));
     });
-    // TODO: アコーディオンメニュー
 }
 
 // 共通 リンクによる画面遷移
@@ -62,17 +68,18 @@ function mvPage(url) {
     location.href=url;
 }
 
+
 // 共通 メニュー開閉
 function bindToggleMenu(){
-    $('#navigation-toggle').on('click', function(){
-        $('#navigation').animate({opacity: "toggle"},100);
+    $('#' + ID_NAVIGATION_TOGGLE).on('click', function(){
+        $('#' + ID_NAVIGATION).animate({opacity: "toggle"},100);
     });
     $('#' + ID_CONTENTS).on('click', function(){
-        $('#navigation').css('display', 'none');
+        $('#' + ID_NAVIGATION).css('display', 'none');
     });
-    $('.navigation-category').each(function(){
+    $('.' + CLASS_NAVIGATION_CATEGORY).each(function(){
         $(this).on('click', function(){
-            $(this).parent().find('.navigation-link').each(function(){
+            $(this).parent().find('.' + CLASS_NAVIGATION_LINK).each(function(){
                 $(this).animate({height:'toggle'});
             });
         });

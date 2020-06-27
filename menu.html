@@ -45,33 +45,42 @@
                         <div></div>
                     </div>
                 </div>
-                <div id="org-name-area">ユーザ太郎</div>
+                <div id="org-name-area">ログイン：ユーザ太郎</div>
+                <div id="select-lang-area"><a href="menu.html?lang=jp">JP</a>&nbsp;/&nbsp;<a href="menu.html?lang=en">EN</a></div>
             </div>
             <div id="navigation">
                 <div id="navigation-menu">
+                    <!-- TODO:アコーディオンリンク設定-->
                     <div>
-                        <div class="navigation-category">カテゴリ</div>
-                        <div class="navigation-link">対応ページ</div>
-                        <div class="navigation-link">対応ページ</div>
+                        <div class="navigation-category">mock専用</div>
+                        <div class="navigation-link" href="index.html">index</div>
+                        <div class="navigation-link" href="login.html">ログイン</div>
                     </div>
                     <div>
-                        <div class="navigation-category">カテゴリ</div>
-                        <div class="navigation-link">対応ページ</div>
-                        <div class="navigation-link">対応ページ</div>
+                        <div class="navigation-category">申請</div>
+                        <div class="navigation-link" href="menu.html">新規申請</div>
+                        <div class="navigation-link" href="menu.html">申請状況一覧</div>
                     </div>
                     <div>
-                        <div class="navigation-category">カテゴリ</div>
-                        <div class="navigation-link">対応ページ</div>
-                        <div class="navigation-link">対応ページ</div>
+                        <div class="navigation-category">承認</div>
+                        <div class="navigation-link" href="menu.html">承認待ち一覧</div>
+                        <div class="navigation-link" href="menu.html">承認状況一覧</div>
+                        <div class="navigation-link" href="menu.html">今月承認一覧</div>
+                    </div>
+                    <div>
+                        <div class="navigation-category">事務</div>
+                        <div class="navigation-link" href="menu.html">承認済検索</div>
+                        <div class="navigation-link" href="menu.html">今月事務一覧</div>
                     </div>
                 </div>
-                <p id="setting-icon"><img id="setting-icon-img" src="img/setting_icon.png"/></p>
-                <p id="notice-icon"><img id="notice-icon-img" src="img/notice_icon.png"/></p>
+                <div id="setting-icon" class="navigation-link" href="menu.html"><img id="setting-icon-img" src="img/setting_icon.png"/>&nbsp;設定</div>
+                <div id="notice-icon" class="navigation-link" href="menu.html"><img id="notice-icon-img" src="img/notice_icon.png"/>&nbsp;お知らせ</div>
             </div>
             <div id="contents">
                 <div id="message">
-                    <div id="info">システム管理者からのお知らせを表示</div>
-                    <div id="error">緊急性のあるお知らせ</div>
+                    <div id="info">承認待ちの申請が10件あります。</div>
+                    <div id="error">申請が却下されました。内容を確認してください。</div>
+                    <div id="info">システム管理者からお知らせがあります。内容を確認してください。</div>
                 </div>
                 <div id="menu">作成予定
                 </div>
