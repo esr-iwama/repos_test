@@ -1,2 +1,55 @@
 @charset "utf-8";
 
+#top_menu {
+    margin:0 5px 0 10px;
+    width:25%;
+}
+
+#top_menu_header {
+    width:100%;
+}
+
+#dashboard {
+    width:70%;
+    margin: 0 10px 0 0;
+    float:right;
+}
+
+#apply {
+    margin:0 0 5px 0;
+}
+
+#approval {
+    margin:0 0 5px 0;
+}
+
+#prev_apply_header {
+    width:100%;
+}
+
+#approval_header {
+    width:100%;
+}
+
+#notice_header {
+    width:100%;
+}
+
+.rejected {
+    color:#ff4040;
+}
+
+.approved {
+    color: #b0b0b0;
+}
+
+.nothing {
+    cursor: inherit;
+    -webkit-box-shadow: rgba(32,32,64,0.05) 0 3px 1px;
+    box-shadow: rgba(32,32,64,0.05) 0 3px 1px;
+    background-color: #ffffff;
+    border: 1px solid #f0f0f0;
+    margin:0;
+    border-radius: 1px;
+    color: #000000;
+}

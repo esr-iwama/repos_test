@@ -35,7 +35,15 @@ function adjustContentsScrollbar() {
 
 // 共通 入力項目ラベルのバルーン生成
 function bindLabelBalloon() {
-    $('.' + CLASS_LABEL).balloon({ html:true, position:"top left", offsetX:10 ,showDuration: 50, hideDuration: 10, classname: CLASS_BALLOON_TIP,css: {color: "#f0f0f0",backgroundColor: "#50c0f0",opacity: "0.90",textAlign: "left"}});
+    $('.' + CLASS_LABEL).each(function(){
+        if(!$(this).attr('title')) {
+            $(this).attr('title', $(this).text())
+        }
+    });
+    if(!$('.' + CLASS_LABEL).attr('title')) {
+
+    }
+    $('.' + CLASS_LABEL).balloon({ html:true, fontSize:'.1.0rem', minWidth: ".1.0rem", position:"top left", offsetX:10 ,showDuration: 50, hideDuration: 10, classname: CLASS_BALLOON_TIP,css: {color: "#f0f0f0",backgroundColor: "#50c0f0",opacity: "0.90",textAlign: "left"}});
 // TODO: 出したり消したりずらしたりいろいろ
 /*
     $('.' + CLASS_LABEL).each(function(){
@@ -52,6 +60,9 @@ function bindCommonLink() {
     $('#' + ID_AP_LOGO).on('click', function(){
         mvPage('index.html');
     });
+    $('.link_button').on('click', function(){
+        mvPage($(this).attr('href'));
+    });
     $('.' + CLASS_NAVIGATION_LINK).on('click', function(){
         mvPage($(this).attr('href'));
     });
@@ -61,11 +72,20 @@ function bindCommonLink() {
     $('#' + ID_SETTING_ICON).on('click', function(){
         mvPage($(this).attr('href'));
     });
+    // TODO: マルチ言語対応
+    $('#select-lang-jp, #select-lang-en').on('click',function(){
+        alert('mockupでは言語切替は非対応です。製品版では実装されます。');
+    });
 }
 
+// TODO: mockup作成中用ダミーコードあり
 // 共通 リンクによる画面遷移
 function mvPage(url) {
-    location.href=url;
+    if (url=='none' || url=='#') {
+        alert('調整中');
+    } else {
+        location.href=url;
+    }
 }
 
 
