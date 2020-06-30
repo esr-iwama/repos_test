@@ -1,0 +1,153 @@
+@charset "utf-8";
+
+#search_form {
+    background-color: #f8f8f8;
+    border:1px solid #e0e0e0;
+    border-radius: 8px;
+    min-width:550px;
+    max-width:750px;
+    max-height:1200px;
+    margin: 0 auto;
+    padding-bottom:15px;
+}
+#search_form_header {
+    width:100%;
+    margin-bottom:2px;
+}
+
+#search_form div {
+    display:inline-block;
+}
+#search_form div .label {
+    margin-left:10px;
+    display:inline-block;
+}
+#search_form div .input {
+    display:inline-block;
+}
+#apply_date .label {
+    width:90px;
+}
+#apply_date .input {
+    width:200px;
+}
+#apply_date .input input {
+    width:100px;
+}
+#apply_date_calendar {
+    border: 1px solid #50c0f080;
+    border-radius: 6px;
+    background-color: #50c0f0;
+    color:#f8f8f8;
+    cursor: pointer;
+    margin-left:2px;
+    padding:0 2px 2px 2px;
+}
+#apply_date_calendar:active {
+    position:relative;
+    top:1px;
+    left:1px;
+}
+
+#applyer .label {
+    width:90px;
+}
+#applyer .input {
+    width:210px;
+}
+#applyer .input select {
+    width:200px;
+}
+
+#title .label {
+    width:90px;
+}
+#title .input {
+    width:440px;
+}
+#title .input input {
+    width:430px;
+}
+
+#subject .label {
+    width:90px;
+}
+#subject .input {
+    width:440px;
+}
+#subject .input input {
+    width:430px;
+}
+
+#maker .label {
+    width:90px;
+}
+#maker .input {
+    width:200px;
+}
+#maker .input input {
+    width:190px;
+}
+
+#model .label {
+    width:90px;
+}
+#model .input {
+    width:200px;
+}
+#model .input input {
+    width:190px;
+}
+
+#amount .label {
+    width:90px;
+}
+#amount .input {
+    width:280px;
+}
+#amount .input input {
+    width:120px;
+}
+
+#amount .change_currency {
+    border: 1px solid #50c0f080;
+    border-radius: 6px;
+    background-color: #50c0f0;
+    color:#f8f8f8;
+    cursor: pointer;
+    padding:0 7px 0 7px;
+}
+
+#amount .change_currency:active {
+    position:relative;
+    top:1px;
+    left:1px;
+}
+
+#next .label {
+    width:90px;
+}
+#next .input {
+    width:200px;
+}
+#next .input select {
+    width:190px;
+}
+
+#status .label {
+    width:90px;
+}
+#status .input {
+    width:200px;
+}
+#status .input select {
+    width:190px;
+}
+
+#button_area {
+    margin-top:10px;
+    width:500px;
+}
+#button_area div {
+    margin-left:10px;
+}

@@ -19,17 +19,31 @@ a {
     cursor: pointer;
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="password"], textarea, select {
     margin: 1px 0;
     border: 1px solid #d0d0d0;
     background-color: #50c0f010;
     border-radius: 2px;
 }
 
-input[type="text"]:focus, input[type="password"]:focus {
+select {
+    padding:1px 0 1px 0;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus, select:focus {
     outline:1px solid #50c0f0;
+    background-color: #f0fdfd;
     -webkit-box-shadow: rgba(80,192,240,0.05) 0 1px 1px;
     box-shadow: rgba(80,192,240,0.05) 0 1px 1px;
+}
+
+input[type="text"]:hover, input[type="password"]:hover, textarea:hover, select:hover {
+    background-color: #f0fdfd;
+}
+
+input[type="file"] {
+    color:#333333;
+    border-radius: 2px;
 }
 
 /* common style */
@@ -178,6 +192,7 @@ input[type="text"]:focus, input[type="password"]:focus {
     overflow-x: scroll;
     -ms-overflow-style: initial;
     scrollbar-width: initial;
+    padding-bottom:10px;
 }
 
 #contents::-webkit-scrollbar {
@@ -211,6 +226,31 @@ input[type="text"]:focus, input[type="password"]:focus {
     text-align: center;
     color:#f0f0f0;
     padding:0;
+}
+
+/*
+TODO: footer検討
+            <div id="toggle-footer">↑</div>
+            <div id="footer">
+
+            </div>
+*/
+
+#toggle-footer {
+    display:block;
+    position:fixed;
+    font-size:24px;
+    font-weight: bolder;
+    line-height: 36px;
+    text-shadow: 0px 0px 20px rgba(255,255,0,1);
+    background-color:#60c8f0;
+    border-color: #dddddd;
+    border: 1px solid #f0f0f0;
+    bottom:0px;
+    text-align: center;
+    right:20px;
+    width:40px;
+    height:40px;
 }
 
 /* common parts */
@@ -294,6 +334,12 @@ input[type="text"]:focus, input[type="password"]:focus {
     color: #808080;
 }
 
+.cancel_button:active {
+    position:relative;
+    top:1px;
+    left:1px;
+} 
+
 .cancel_button:hover {
     color: #808080;
     text-decoration: none;
@@ -315,10 +361,4 @@ input[type="text"]:focus, input[type="password"]:focus {
 
 .input input {
     cursor: auto;
-}
-.input input:hover {
-    background-color: #f0fdfd;
-}
-.input input:focus {
-    background-color: #f0fdfd;
 }

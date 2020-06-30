@@ -60,7 +60,7 @@ function bindCommonLink() {
     $('#' + ID_AP_LOGO).on('click', function(){
         mvPage('index.html');
     });
-    $('.link_button').on('click', function(){
+    $('.link_button').on('click', function(){ //TODO:
         mvPage($(this).attr('href'));
     });
     $('.' + CLASS_NAVIGATION_LINK).on('click', function(){
@@ -119,7 +119,8 @@ function bindSubmitButtons() {
             $(form).attr('action',url);
             // TODO: mockup用 GitHub Pages対応
             // $(form).submit();
-            location.href=$(form).attr('action');
+            // location.href=$(form).attr('action');
+            location.href=$(this).attr('action');
         });
     });
 }
