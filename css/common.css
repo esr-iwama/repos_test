@@ -26,6 +26,10 @@ input[type="text"], input[type="password"], textarea, select {
     border-radius: 2px;
 }
 
+input[type="text"]:read-only, input[type="password"]:read-only, textarea:read-only, select:disabled {
+    background-color: #10408010;
+}
+
 select {
     padding:1px 0 1px 0;
 }
@@ -303,7 +307,6 @@ TODO: footer検討
 
 .submit_button:active {
     color: #f0f0f0;
-    text-decoration: none;
     position:relative;
     top:1px;
     left:1px;

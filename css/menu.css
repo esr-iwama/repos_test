@@ -39,6 +39,10 @@
     color:#ff4040;
 }
 
+.rejected:hover {
+    color:#f03838;
+}
+
 .approved {
     color: #b0b0b0;
 }

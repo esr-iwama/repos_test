@@ -76,8 +76,13 @@
     border-top-right-radius: 6px;
 }
 
+#detail_table td {
+    border:1px solid #e0e0e0;
+}
+
 #detail_table .fixed td {
-    padding:2px;
+    padding-left:2px;
+    padding-right:2px;
 }
 #detail_table td input, #detail_table td textarea {
     margin:0 1px;
@@ -182,6 +187,10 @@
     color:#f8f8f8;
     width:50px;
     cursor: pointer;
+}
+
+#cc_mail {
+    width:29%;
 }
 
 #add_cc:active {

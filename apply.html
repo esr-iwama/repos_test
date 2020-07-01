@@ -24,6 +24,11 @@
         <link rel="stylesheet" type="text/css" href="./css/common.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="./css/apply.css" rel="stylesheet">
     </head>
+    <style>
+#detail_table td:first-child {
+    border:none; /* TODO:apply.cssに移管 */
+}
+    </style>
     <body>
         <div id="main" class="container-fluid">
             <div id="header">
@@ -94,6 +99,8 @@
                                     <option>ユーザ三郎</option>
                                 </select>
                                 <input type="button" id="add_cc" name="add" value="追加" />
+                                <input type="text" id="cc_mail" name="cc_mail" />
+                                <input type="button" id="add_cc" name="add" value="追加" />
                             </div>
                         </div>
                         <div class="form_row">
@@ -123,11 +130,20 @@
                                     </tr>
                                     <tr class="detail_row">
                                         <td><span class="delete_detail_button">ー</span></td>
+                                        <td><input type="text" class="maker" maxlengtd="50" name="maker" value=""/></td>
+                                        <td><input type="text" class="model" maxlengtd="50" name="model" value=""/></td>
+                                        <td><input type="text" class="price" maxlengtd="50" name="price" value=""/></td>
+                                        <td><input type="text" class="quantity" maxlengtd="50" name="quantity" value=""/></td>
+                                        <td><input type="text" class="amount" maxlengtd="50" name="amount" readonly="readonly" value=""/></td>
+                                        <td><input type="text" class="remark" maxlengtd="50" name="remark" value=""/></td>
+                                    </tr>
+                                    <tr class="detail_row">
+                                        <td><span class="delete_detail_button">ー</span></td>
                                         <td><input type="text" class="maker" maxlengtd="50" name="maker"/></td>
                                         <td><input type="text" class="model" maxlengtd="50" name="model"/></td>
                                         <td><input type="text" class="price" maxlengtd="50" name="price"/></td>
                                         <td><input type="text" class="quantity" maxlengtd="50" name="quantity"/></td>
-                                        <td><input type="text" class="amount" maxlengtd="50" name="amount"/></td>
+                                        <td><input type="text" class="amount" maxlengtd="50" name="amount" readonly="readonly"/></td>
                                         <td><input type="text" class="remark" maxlengtd="50" name="remark"/></td>
                                     </tr>
                                     <tr class="detail_row">
@@ -136,7 +152,7 @@
                                         <td><input type="text" class="model" maxlengtd="50" name="model"/></td>
                                         <td><input type="text" class="price" maxlengtd="50" name="price"/></td>
                                         <td><input type="text" class="quantity" maxlengtd="50" name="quantity"/></td>
-                                        <td><input type="text" class="amount" maxlengtd="50" name="amount"/></td>
+                                        <td><input type="text" class="amount" maxlengtd="50" name="amount" readonly="readonly"/></td>
                                         <td><input type="text" class="remark" maxlengtd="50" name="remark"/></td>
                                     </tr>
                                     <tr class="detail_row">
@@ -145,7 +161,7 @@
                                         <td><input type="text" class="model" maxlengtd="50" name="model"/></td>
                                         <td><input type="text" class="price" maxlengtd="50" name="price"/></td>
                                         <td><input type="text" class="quantity" maxlengtd="50" name="quantity"/></td>
-                                        <td><input type="text" class="amount" maxlengtd="50" name="amount"/></td>
+                                        <td><input type="text" class="amount" maxlengtd="50" name="amount" readonly="readonly"/></td>
                                         <td><input type="text" class="remark" maxlengtd="50" name="remark"/></td>
                                     </tr>
                                     <tr class="detail_row">
@@ -154,32 +170,23 @@
                                         <td><input type="text" class="model" maxlengtd="50" name="model"/></td>
                                         <td><input type="text" class="price" maxlengtd="50" name="price"/></td>
                                         <td><input type="text" class="quantity" maxlengtd="50" name="quantity"/></td>
-                                        <td><input type="text" class="amount" maxlengtd="50" name="amount"/></td>
-                                        <td><input type="text" class="remark" maxlengtd="50" name="remark"/></td>
-                                    </tr>
-                                    <tr class="detail_row">
-                                        <td><span class="delete_detail_button">ー</span></td>
-                                        <td><input type="text" class="maker" maxlengtd="50" name="maker"/></td>
-                                        <td><input type="text" class="model" maxlengtd="50" name="model"/></td>
-                                        <td><input type="text" class="price" maxlengtd="50" name="price"/></td>
-                                        <td><input type="text" class="quantity" maxlengtd="50" name="quantity"/></td>
-                                        <td><input type="text" class="amount" maxlengtd="50" name="amount"/></td>
+                                        <td><input type="text" class="amount" maxlengtd="50" name="amount" readonly="readonly"/></td>
                                         <td><input type="text" class="remark" maxlengtd="50" name="remark"/></td>
                                     </tr>
                                 </table>
                                 </div>
                         </div>
                         <hr/>
-                        <div id="">
-                            <div class="form_row">
+                        <div id="summary">
+                            <div class="form_row" id="total_amount">
                                 <div class="label">合計金額</div>
-                                <div class="input">※ 上記明細の合計金額が表示されます</div>
+                                <div class="input">\0</div>
                             </div>
-                            <div class="form_row">
+                            <div class="form_row" id="approval_route">
                                 <div class="label">承認</div>
                                 <div class="input">※ 上記で追加された承認者が表示されます</div>
                             </div>
-                            <div class="form_row">
+                            <div class="form_row" id="cc_list">
                                 <div class="label">CC</div>
                                 <div class="input">※ 上記で追加されたCC先が表示されます</div>
                             </div>
